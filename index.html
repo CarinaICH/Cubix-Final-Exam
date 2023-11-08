@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="bundle.js" type="module"></script>
+
+    <title>FINAL EXAM</title>
+    <link rel="shortcut icon" href="./assets/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div id="header">
+      <h1>Fruit Infos</h1>
+
+      <form id="form">
+        <div id="search-by-fruit-name">
+          <div>
+            <label>
+              <p>search by fruit name</p>
+              <input type="radio" name="search-by" id="fruit-name-radio" />
+            </label>
+          </div>
+
+          <div id="fruit-name-div">
+            <input id="fruit-name-input" type="text" placeholder="Fruit" />
+          </div>
+        </div>
+
+        <div id="search-by-calories">
+          <div id="withimage">
+            <label id="radio-label">
+              <p>search by calories</p>
+              <input type="radio" name="search-by" id="calories-radio" />
+            </label>
+
+            <img src="assets/icons8-info-50.png" alt="info" />
+            <p class="hide">
+              if min and max is 0, all fruits will be displayed
+            </p>
+          </div>
+
+          <div id="min-max-calories">
+            <!--min=15-->
+            <!--max=160-->
+            <label>minimum calories</label>
+            <select name="min-calories" id="min-calories">
+              <option value="0">0</option>
+              <option value="15">15</option>
+              <option value="45">45</option>
+              <option value="100">100</option>
+            </select>
+
+            <label>maximum calories</label>
+            <select name="max-calories" id="max-calories">
+              <option value="0">0</option>
+              <option value="30">30</option>
+              <option value="45">60</option>
+              <option value="160">160</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <button id="submit" type="submit">Search</button>
+        </div>
+      </form>
+    </div>
+
+    <div class="content">
+      <div id="error-message" style="display: none"></div>
+      <div id="loading-container"></div>
+      <div id="zizi-cards-container"></div>
+    </div>
+  </body>
+</html>

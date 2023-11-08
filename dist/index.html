@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="bundle.js" type="module"></script>
+
+    <title>FINAL EXAM</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <div id="header">
+      <h1>Fruit Infos</h1>
+
+      <!--<div class="search-bar">-->
+      <!--<div class="form-container">-->
+      <form id="fruit-form">
+        <div id="flex-container">
+          <div>
+            <input id="fruit-input" type="text" placeholder="Fruit" required />
+          </div>
+
+          <div id="advanced">
+            <label for="">show extra info <span>(not required)</span></label>
+            <select name="cars" id="cars">
+              <option value="volvo">do not show any extra info</option>
+              <option value="volvo">genus</option>
+              <option value="saab">carbohydrates</option>
+            </select>
+          </div>
+
+          <div>
+            <button id="submit" type="submit">Search</button>
+          </div>
+        </div>
+      </form>
+      <!--</div>-->
+      <!--</div>-->
+    </div>
+
+    <div class="content">
+      <div id="error-message" style="display: none">
+        Error while retriveing fruit informations
+      </div>
+      <div id="cards-container"></div>
+    </div>
+  </body>
+</html>

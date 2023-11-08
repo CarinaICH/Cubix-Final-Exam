@@ -1,0 +1,225 @@
+@import "./loading";
+@import 'mixin';
+@import 'variables';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 1rem;
+    font-size: 1rem;
+    font-family: $body-font;
+}
+
+%button {
+    background: none;
+    background-color: $secondary-color;
+    color: #FFF;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $font-color;
+    }
+
+    &:focus {
+        background-color: $button-focus-color;
+        color: $font-color;
+    }
+}
+
+#header {
+    height: 160px;
+    width: 80%;
+    margin: auto;
+    padding: 0 40px;
+    border-radius: 10px;
+    background: #f7ff00;
+    //fallback for old browsers 
+    background: -webkit-linear-gradient(to right, #db36a4, #f7ff00);
+    // Chrome 10-25, Safari 5.1-6 
+    background: linear-gradient(to right, #db36a4, #f7ff00);
+    // W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+;
+
+    /*Fruit Infos*/
+    h1 {
+        text-align: center;
+        align-items: center;
+        padding-top: 10px;
+        height: 40px;
+
+    }
+
+    /*div: search by fruit name*/
+    form #search-by-fruit-name {
+        @include div-inside-form-style;
+        margin-top:10px;
+
+        /*label: wraps the p and radio button*/
+        label {
+            cursor: pointer;
+            display: flex;
+
+            p {
+                margin-right: 10px;
+            }
+
+            input[type="radio"] {
+                //inculde mixin
+                @include customRadioButton;
+
+                &::before {
+                    @include customRadioButton-before;
+                }
+
+                &:checked::before {
+                    transform: scale(1);
+                }
+            }
+        }
+
+        /*input for searching by fruitname*/
+        #fruit-name-div {
+            display: none;
+        }
+    }
+
+    /*div: search by calories*/
+    form #search-by-calories {
+        @include div-inside-form-style;
+        margin:10px 0;
+
+        /*div with: radio button, label, img (info icon), p (if hover)*/
+        #withimage {
+            display: flex;
+            
+            /*label: wraps the p and radio button*/
+            #radio-label {
+                cursor: pointer;
+                display: flex;
+
+                p {
+                    margin-right: 25px;
+                }
+
+                input[type="radio"] {
+                        //inculde mixin
+                        @include customRadioButton;
+                
+                        &::before {
+                            @include customRadioButton-before;
+                        }
+                
+                        &:checked::before {
+                            transform: scale(1);
+                        }
+                    }
+                
+            }
+            
+
+            /*info icon*/
+            img{
+                height: 16px;
+                margin-left: 5px;
+
+                &:hover + .hide {
+                display: inline-block;
+                
+                }
+            }
+
+            .hide {
+                display: none;
+                margin-left: 5px;
+            }
+        }
+
+        /*div: wraps selec-options*/
+        #min-max-calories {
+            display: none; 
+        }
+    }
+
+    /*button*/
+    form button {
+        @extend %button;
+        margin-bottom: 10px
+    }
+}
+
+/*content div*/
+.content {
+    padding: 16px;
+
+    #error-message {
+        text-align: center;
+        background-color: #c62828;
+        color: #FFF;
+        font-size: 18px;
+        padding: 16px;
+        border-radius: 4px;
+        margin:5px 0;
+
+    }
+
+    #zizi-cards-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 32px;
+
+        //lading state
+        zizi-card {
+            width: 25%;
+            animation: fadeIn 3s; 
+
+            h1 {
+                text-align: center;
+            }
+            
+            .card-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 20px;
+                gap: 16px;
+                padding: 16px;
+                
+                /*retrieved data from server except fruit name*/
+                span {
+                    font-style: italic;
+                    color: $card-changing-content-color
+                }
+            }
+    
+        }
+        
+        //animation
+        @keyframes fadeIn {
+    
+            //first state
+            0% {
+                opacity: 0;
+            }
+    
+            100% {
+                opacity: 1;
+            }
+    
+        }
+    }
+
+}
+
+
+
+
+
+

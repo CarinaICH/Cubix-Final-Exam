@@ -1,0 +1,39 @@
+//mixin for radio buttons
+@mixin customRadioButton {
+    //hide native radio input
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    appearance: none;
+    /* For iOS < 15 to remove gradient background */
+    background-color: #fff;
+    /* Not removed via appearance */
+    margin: 0;
+
+    //unchecked
+    color: $secondary-color;
+    width: 1.5em;
+    height: 1.5em;
+    border: 0.15em solid $secondary-color;
+    border-radius: 50%;
+
+    display: grid;
+    place-content: center;
+    cursor: pointer;
+}
+
+@mixin customRadioButton-before {
+    content: "";
+    width: 0.8em;
+    height: 0.8em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em $secondary-color;
+}
+
+//mixin for divs (search-by-fruit-name, search-by-calories ) inside form
+@mixin div-inside-form-style {
+    display: flex;
+    justify-content: space-between;
+    height: 20px;
+}

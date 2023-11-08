@@ -1,0 +1,26 @@
+{
+  "name": "9-final-exam",
+  "version": "1.0.0",
+  "description": "Web application that can retrieve and display data from a remote server. And has a form that can alter the data. This app uses Fruityvice that has data about all kinds of fruits.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack server",
+    "build": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.8.1",
+    "sass": "^1.63.6",
+    "sass-loader": "^13.3.2",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.88.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.1"
+  },
+  "dependencies": {
+    "zizi-card": "^1.0.3"
+  }
+}
